@@ -10,10 +10,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.Date;
 
-/**
- * @author Vladislav Marchenko
- */
 @Entity
+@Table(name = "todo_entities")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -24,8 +22,8 @@ public class TodoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "user", nullable = false)
-    private int user;
+    @Column(name = "userID", nullable = false)
+    private Long userID;
 
     @Column(name = "text", nullable = false)
     private String text;
@@ -40,4 +38,13 @@ public class TodoEntity {
 
     @Column(name = "due", nullable = false)
     private Date due;
+
+    @Override
+    public String toString() {
+        return "Task #" + id +
+                ":\n" + text +
+                "\nstatus - " + status +
+                "\npriority - " + priority +
+                "\ndue date - " + due + "\n\n";
+    }
 }

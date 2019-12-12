@@ -7,13 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Date;
 import java.util.Set;
 
-/**
- * @author Vladislav Marchenko
- */
+
 public interface TodoRepository extends JpaRepository<TodoEntity, Integer> {
-    Set<TodoEntity> findAllByUser(int user);
+    TodoEntity findById(int id);
 
-    Set<TodoEntity> findAllByUserAndStatus(int user, TodoStatus status);
+    Set<TodoEntity> findAllByUserIDOrderByIdAsc(long user);
 
-    Set<TodoEntity> findAllByUserAndDue(int user, Date due);
+    Set<TodoEntity> findAllByUserIDAndStatusOrderByIdAsc(long user, TodoStatus status);
+
+    Set<TodoEntity> findAllByUserIDAndDueOrderByIdAsc(long user, Date due);
 }
