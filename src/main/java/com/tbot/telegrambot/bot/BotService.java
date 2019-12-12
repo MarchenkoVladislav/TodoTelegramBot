@@ -5,7 +5,6 @@ import com.tbot.telegrambot.db.entity.TodoEntity;
 import com.tbot.telegrambot.db.enums.TodoPriority;
 import com.tbot.telegrambot.db.enums.TodoStatus;
 import com.tbot.telegrambot.db.repository.TodoRepository;
-import com.tbot.telegrambot.exception.InvalidDateException;
 import com.tbot.telegrambot.util.Pair;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -107,23 +106,38 @@ public class BotService extends TelegramLongPollingBot {
             sendMsg(msg, "Enter a date of task, please(dd-mm-yyyy)", false);
         }
         else if(dueMap.containsKey(msg.getChatId())) {
-            dueMap.remove(msg.getChatId());
-            Set<TodoEntity>  todoEntities = findAllforDate(msg.getChatId(), txt);
-            if (todoEntities.isEmpty()) {
-                sendMsg(msg, "You do not have tasks on this date", true);
-            }
-            else{
-                StringBuilder stringBuilder = new StringBuilder("Tasks on this date\n\n");
-                for (TodoEntity todoEntity : todoEntities) {
-                    stringBuilder.append(todoEntity.toString());
+            try {
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+                Date due = formatter.parse(txt);
+                dueMap.remove(msg.getChatId());
+                Set<TodoEntity>  todoEntities = findAllforDate(msg.getChatId(), due);
+                if (todoEntities.isEmpty()) {
+                    sendMsg(msg, "You do not have tasks on this date", true);
                 }
-                sendMsg(msg, stringBuilder.toString(), true);
+                else{
+                    StringBuilder stringBuilder = new StringBuilder("Tasks on this date\n\n");
+                    for (TodoEntity todoEntity : todoEntities) {
+                        stringBuilder.append(todoEntity.toString());
+                    }
+                    sendMsg(msg, stringBuilder.toString(), true);
+                }
             }
+            catch(ParseException e) {
+                sendMsg(msg, errorMSG, true);
+            }
+
+
         }
         else if(markMap.containsKey(msg.getChatId())) {
-            markMap.remove(msg.getChatId());
-            markCompleted(Integer.parseInt(txt));
-            sendMsg(msg, "Task status was changed successfully", true);
+            TodoEntity todoEntity = repository.findById(Integer.parseInt(txt));
+            if (todoEntity == null) {
+                sendMsg(msg,errorMSG, true);
+            }
+            else {
+                markMap.remove(msg.getChatId());
+                markCompleted(Integer.parseInt(txt));
+                sendMsg(msg, "Task status was changed successfully", true);
+            }
         }
         else if(createMap.containsKey(msg.getChatId())) {
             if (createMap.get(msg.getChatId()).getKey().equals(0)) {
@@ -220,16 +234,8 @@ public class BotService extends TelegramLongPollingBot {
         return repository.findAllByUserIDAndStatusOrderByIdAsc(user, status);
     }
 
-    private Set<TodoEntity> findAllforDate(Long user, String date) {
-        try {
-            SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-            Date due = formatter.parse(date);
-            return repository.findAllByUserIDAndDueOrderByIdAsc(user, due);
-        } catch (ParseException e) {
-            InvalidDateException ibfex = new InvalidDateException("create", "XXX");
-            ibfex.initCause(e);
-            throw ibfex;
-        }
+    private Set<TodoEntity> findAllforDate(Long user, Date date) {
+        return repository.findAllByUserIDAndDueOrderByIdAsc(user, date);
     }
 
     @Override
