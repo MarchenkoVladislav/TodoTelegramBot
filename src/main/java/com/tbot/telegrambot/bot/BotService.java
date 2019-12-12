@@ -6,6 +6,7 @@ import com.tbot.telegrambot.db.enums.TodoPriority;
 import com.tbot.telegrambot.db.enums.TodoStatus;
 import com.tbot.telegrambot.db.repository.TodoRepository;
 import com.tbot.telegrambot.exception.InvalidDateException;
+import com.tbot.telegrambot.util.Pair;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -27,39 +28,44 @@ public class BotService extends TelegramLongPollingBot {
     private final TelegramBotConfig config;
     private final static String helpBtn = "Help";
     private final static String allTasksBtn = "All tasks";
+    private final static String createTaskBtn = "Create task";
+    private final static String markCompletedBtn = "Mark completed";
+    private final static String findTasksByStatusBtn = "Find not completed";
+    private final static String findTasksByDueBtn = "Find tasks by due";
+
+
     private final static String helloMsg = "Hello!\n" +
             "I'm ToDoBot.\n" +
             "You can add your tasks, show the current tasks and manage it.\n" +
             "For more information, please, click help button.";
     private final static String helpMsg = "You can:";
-    private final static String helpMsg1 ="Create task - for this you should to send a string:\n" +
-            "cmd$create*text${text of task}*priority${HIGH/LOW/MIDDLE}\n" +
-            "*due${date in format dd-mm-yyyy}\n";
+    private final static String helpMsg1 ="Create task - for this you should to click 'Create task' and follow instructions";
     private final static String helpMsg2 = "Show all tasks - for this you should to click 'All tasks' button";
-    private final static String helpMsg3 = "Mark task completed - for this you should to send a string:\n" +
-            "cmd$mc*id${task id}";
-    private final static String helpMsg4 = "Find tasks by status - for this you should to send a string:\n" +
-            "cmd$fbs*status${COMPLETED/NOT_COMPLETED}";
-    private final static String helpMsg5 = "Find tasks by due date - for this you should to send a string:\n" +
-            "cmd$fbd*due${date in format dd-mm-yyyy}";
-    private final static String errorMSG ="Invalid command! Click 'Help' to get more information.";
+    private final static String helpMsg3 = "Mark task completed - for this you should to click 'Mark completed' and follow instructions";
+    private final static String helpMsg4 = "Find not completed tasks - for this you should to click 'Find not completed' and follow instructions";
+    private final static String helpMsg5 = "Find tasks by due date - for this you should to click 'Find tasks by due' and follow instructions";
+    private final static String errorMSG ="Invalid command! Try again";
     private final static String createTaskMsg = "Task was created successfully!";
     private final static String updateStatusMsg = "Task status was updated successfully!";
+
+    private Map<Long,Boolean> dueMap  = new HashMap<>();
+    private Map<Long,Boolean> markMap  = new HashMap<>();
+    private Map<Long, Pair<Integer, TodoEntity>> createMap = new HashMap<>();
 
     @Override
     public void onUpdateReceived(Update update) {
         Message msg = update.getMessage();
         String txt = msg.getText();
         if (txt.equals("/start")) {
-            sendMsg(msg, helloMsg);
+            sendMsg(msg, helloMsg, true);
         }
         else if(txt.equals("Help")) {
-            sendMsg(msg, helpMsg);
-            sendMsg(msg, helpMsg1);
-            sendMsg(msg, helpMsg2);
-            sendMsg(msg, helpMsg3);
-            sendMsg(msg, helpMsg4);
-            sendMsg(msg, helpMsg5);
+            sendMsg(msg, helpMsg,true);
+            sendMsg(msg, helpMsg1, true);
+            sendMsg(msg, helpMsg2, true);
+            sendMsg(msg, helpMsg3, true);
+            sendMsg(msg, helpMsg4, true);
+            sendMsg(msg, helpMsg5, true);
         }
         else if(txt.equals("All tasks")) {
             Set<TodoEntity> usersTasks = getAllToDosByUser(msg.getChatId());
@@ -68,75 +74,125 @@ public class BotService extends TelegramLongPollingBot {
                 for (TodoEntity todoEntity : usersTasks) {
                     stringBuilder.append(todoEntity.toString());
                 }
-                sendMsg(msg, stringBuilder.toString());
+                sendMsg(msg, stringBuilder.toString(), true);
             }
             else {
-                sendMsg(msg, "You do not have some tasks!");
+                sendMsg(msg, "You do not have any tasks!", true);
             }
 
         }
-        else {
-            Map<String, String> params = parseStringIntoParams(txt);
-            if (!params.containsKey("cmd")) {
-                sendMsg(msg, errorMSG);
+        else if (txt.equals("Find not completed")){
+            Set<TodoEntity>  todoEntities = findAllByStatus(msg.getChatId(), TodoStatus.NOT_COMPLETED);
+            if (todoEntities.isEmpty()) {
+                sendMsg(msg, "You do not have not completed tasks", true);
             }
-            else if(params.get("cmd").equals("create")) {
-                createTask(params, msg.getChatId());
-                sendMsg(msg, createTaskMsg);
+            else{
+                StringBuilder stringBuilder = new StringBuilder("Not completed tasks\n\n");
+                for (TodoEntity todoEntity : todoEntities) {
+                    stringBuilder.append(todoEntity.toString());
+                }
+                sendMsg(msg, stringBuilder.toString(), true);
             }
-            else if(params.get("cmd").equals("mc")) {
-                markCompleted(Integer.parseInt(params.get("id")));
-                sendMsg(msg, updateStatusMsg);
+        }
+        else if (txt.equals("Find tasks by due")) {
+            dueMap.put(msg.getChatId(), true);
+            sendMsg(msg, "Enter a date, please(dd-mm-yyyy)", false);
+        }
+        else if (txt.equals("Mark completed")) {
+            markMap.put(msg.getChatId(), true);
+            sendMsg(msg, "Enter a number of task, please", false);
+        }
+        else if (txt.equals("Create task")) {
+            createMap.put(msg.getChatId(), new Pair<>(0, new TodoEntity()));
+            sendMsg(msg, "Enter a date of task, please(dd-mm-yyyy)", false);
+        }
+        else if(dueMap.containsKey(msg.getChatId())) {
+            dueMap.remove(msg.getChatId());
+            Set<TodoEntity>  todoEntities = findAllforDate(msg.getChatId(), txt);
+            if (todoEntities.isEmpty()) {
+                sendMsg(msg, "You do not have tasks on this date", true);
             }
-            else if(params.get("cmd").equals("fbs")) {
-                Set<TodoEntity> statusTasks = findAllByStatus(msg.getChatId(), TodoStatus.valueOf(params.get("status")));
-                if (!statusTasks.isEmpty()) {
-                    StringBuilder stringBuilder = new StringBuilder("Tasks:\n\n");
-                    for (TodoEntity todoEntity : statusTasks) {
-                        stringBuilder.append(todoEntity.toString());
-                    }
-                    sendMsg(msg, stringBuilder.toString());
+            else{
+                StringBuilder stringBuilder = new StringBuilder("Tasks on this date\n\n");
+                for (TodoEntity todoEntity : todoEntities) {
+                    stringBuilder.append(todoEntity.toString());
+                }
+                sendMsg(msg, stringBuilder.toString(), true);
+            }
+        }
+        else if(markMap.containsKey(msg.getChatId())) {
+            markMap.remove(msg.getChatId());
+            markCompleted(Integer.parseInt(txt));
+            sendMsg(msg, "Task status was changed successfully", true);
+        }
+        else if(createMap.containsKey(msg.getChatId())) {
+            if (createMap.get(msg.getChatId()).getKey().equals(0)) {
+                TodoEntity todoEntity = createMap.get(msg.getChatId()).getValue();
+                try {
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+                    Date due = formatter.parse(txt);
+                    todoEntity.setDue(due);
+                    sendMsg(msg, "Enter a text, please", false);
+                    createMap.get(msg.getChatId()).setKey(1);
+                    createMap.get(msg.getChatId()).setValue(todoEntity);
+                }
+                catch(ParseException e) {
+                    sendMsg(msg, errorMSG, true);
+                }
+            }
+            else if (createMap.get(msg.getChatId()).getKey().equals(1)) {
+                TodoEntity todoEntity = createMap.get(msg.getChatId()).getValue();
+                todoEntity.setText(txt);
+                sendMsg(msg, "Enter a priority(HIGH/MIDDLE/LOW), please", false);
+                createMap.get(msg.getChatId()).setKey(2);
+                createMap.get(msg.getChatId()).setValue(todoEntity);
+            }
+            else if (createMap.get(msg.getChatId()).getKey().equals(2)) {
+                TodoEntity todoEntity = createMap.get(msg.getChatId()).getValue();
+                if (!txt.equals("LOW") && !txt.equals("MIDDLE") && !txt.equals("HIGH")) {
+                    sendMsg(msg,errorMSG,true);
                 }
                 else {
-                    sendMsg(msg, "You do not have tasks with this status!");
+                    todoEntity.setPriority(TodoPriority.valueOf(txt));
+                    todoEntity.setStatus(TodoStatus.NOT_COMPLETED);
+                    todoEntity.setUserID(msg.getChatId());
+                    sendMsg(msg, "Your task was successfully added", true);
+                    createTask(todoEntity);
+                    createMap.remove(msg.getChatId());
                 }
-            }
-            else if(params.get("cmd").equals("fbd")) {
-                Set<TodoEntity> dateTasks = findAllforDate(msg.getChatId(), params.get("due"));
-                if(!dateTasks.isEmpty()) {
-                    StringBuilder stringBuilder = new StringBuilder("Tasks:\n\n");
-                    for (TodoEntity todoEntity : dateTasks) {
-                        stringBuilder.append(todoEntity.toString());
-                    }
-                    sendMsg(msg, stringBuilder.toString());
-                }
-                else {
-                    sendMsg(msg, "You do not have tasks on this date!");
-                }
-            }
-            else {
-                sendMsg(msg, errorMSG);
             }
         }
     }
 
-    private void sendMsg(Message msg, String text) {
+    private void sendMsg(Message msg, String text, boolean flag) {
         SendMessage s = new SendMessage();
 
-        ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
-        s.setReplyMarkup(replyKeyboardMarkup);
-        replyKeyboardMarkup.setSelective(true);
-        replyKeyboardMarkup.setResizeKeyboard(true);
-        replyKeyboardMarkup.setOneTimeKeyboard(false);
+        if (flag) {
+            ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
+            s.setReplyMarkup(replyKeyboardMarkup);
+            replyKeyboardMarkup.setSelective(true);
+            replyKeyboardMarkup.setResizeKeyboard(true);
+            replyKeyboardMarkup.setOneTimeKeyboard(false);
 
-        List<KeyboardRow> keyboard = new ArrayList<>();
+            List<KeyboardRow> keyboard = new ArrayList<>();
 
-        KeyboardRow keyboardFirstRow = new KeyboardRow();
-        keyboardFirstRow.add(helpBtn);
-        keyboardFirstRow.add(allTasksBtn);
+            KeyboardRow keyboardFirstRow = new KeyboardRow();
+            keyboardFirstRow.add(helpBtn);
+            keyboardFirstRow.add(allTasksBtn);
 
-        keyboard.add(keyboardFirstRow);
-        replyKeyboardMarkup.setKeyboard(keyboard);
+            KeyboardRow keyboardSecondRow = new KeyboardRow();
+            keyboardSecondRow.add(createTaskBtn);
+            keyboardSecondRow.add(markCompletedBtn);
+
+            KeyboardRow keyboardThirdRow = new KeyboardRow();
+            keyboardThirdRow.add(findTasksByDueBtn);
+            keyboardThirdRow.add(findTasksByStatusBtn);
+
+            keyboard.add(keyboardFirstRow);
+            keyboard.add(keyboardSecondRow);
+            keyboard.add(keyboardThirdRow);
+            replyKeyboardMarkup.setKeyboard(keyboard);
+        }
         s.setChatId(msg.getChatId());
         s.setText(text);
         try {
@@ -146,22 +202,8 @@ public class BotService extends TelegramLongPollingBot {
         }
     }
 
-
-    private TodoEntity createTask(Map<String, String> taskParams, long user) {
-        try {
-           TodoEntity todoEntity = new TodoEntity();
-           SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-           todoEntity.setDue(formatter.parse(taskParams.get("due")));
-           todoEntity.setPriority(TodoPriority.valueOf(taskParams.get("priority")));
-           todoEntity.setStatus(TodoStatus.NOT_COMPLETED);
-           todoEntity.setText(taskParams.get("text"));
-           todoEntity.setUserID(user);
-           return repository.save(todoEntity);
-        } catch (ParseException e) {
-           InvalidDateException ibfex = new InvalidDateException("create", taskParams.get("id"));
-           ibfex.initCause(e);
-           throw ibfex;
-        }
+    private TodoEntity createTask(TodoEntity todoEntity) {
+        return repository.save(todoEntity);
     }
 
     private Set<TodoEntity> getAllToDosByUser(Long user) {
@@ -188,16 +230,6 @@ public class BotService extends TelegramLongPollingBot {
             ibfex.initCause(e);
             throw ibfex;
         }
-    }
-
-    private Map<String, String> parseStringIntoParams(String string) {
-        String [] tmp = string.split("\\*");
-        Map<String, String> params = new HashMap<>();
-        for (int i = 0; i < tmp.length; i++) {
-            String [] param = tmp[i].split("\\$");
-            params.put(param[0], param[1]);
-        }
-        return  params;
     }
 
     @Override
