@@ -45,6 +45,6 @@ public class TodoEntity {
                 ":\n" + text +
                 "\nstatus - " + status +
                 "\npriority - " + priority +
-                "\ndue date - " + due + "\n\n";
+                "\ndue date - " + due.toString().substring(0,10) + "\n\n";
     }
 }
