@@ -24,12 +24,19 @@ import java.util.*;
 @RequiredArgsConstructor
 public class BotService extends TelegramLongPollingBot {
     private final TodoRepository repository;
+
     private final TelegramBotConfig config;
+
     private final static String helpBtn = "Help";
+
     private final static String allTasksBtn = "All tasks";
+
     private final static String createTaskBtn = "Create task";
+
     private final static String markCompletedBtn = "Mark completed";
+
     private final static String findTasksByStatusBtn = "Find not completed";
+
     private final static String findTasksByDueBtn = "Find tasks by due";
 
 
@@ -37,27 +44,40 @@ public class BotService extends TelegramLongPollingBot {
             "I'm ToDoBot.\n" +
             "You can add your tasks, show the current tasks and manage it.\n" +
             "For more information, please, click help button.";
+
     private final static String helpMsg = "You can:";
+
     private final static String helpMsg1 ="Create task - for this you should to click 'Create task' and follow instructions";
+
     private final static String helpMsg2 = "Show all tasks - for this you should to click 'All tasks' button";
+
     private final static String helpMsg3 = "Mark task completed - for this you should to click 'Mark completed' and follow instructions";
+
     private final static String helpMsg4 = "Find not completed tasks - for this you should to click 'Find not completed' and follow instructions";
+
     private final static String helpMsg5 = "Find tasks by due date - for this you should to click 'Find tasks by due' and follow instructions";
+
     private final static String errorMSG ="Invalid command! Try again";
+
     private final static String createTaskMsg = "Task was created successfully!";
+
     private final static String updateStatusMsg = "Task status was updated successfully!";
 
     private Map<Long,Boolean> dueMap  = new HashMap<>();
+
     private Map<Long,Boolean> markMap  = new HashMap<>();
+
     private Map<Long, Pair<Integer, TodoEntity>> createMap = new HashMap<>();
 
     @Override
     public void onUpdateReceived(Update update) {
         Message msg = update.getMessage();
         String txt = msg.getText();
+
         if (txt.equals("/start")) {
             sendMsg(msg, helloMsg, true);
         }
+
         else if(txt.equals("Help")) {
             sendMsg(msg, helpMsg,true);
             sendMsg(msg, helpMsg1, true);
@@ -66,79 +86,97 @@ public class BotService extends TelegramLongPollingBot {
             sendMsg(msg, helpMsg4, true);
             sendMsg(msg, helpMsg5, true);
         }
+
         else if(txt.equals("All tasks")) {
             Set<TodoEntity> usersTasks = getAllToDosByUser(msg.getChatId());
+
             if (!usersTasks.isEmpty()) {
                 StringBuilder stringBuilder = new StringBuilder("Your tasks\n\n");
+
                 for (TodoEntity todoEntity : usersTasks) {
                     stringBuilder.append(todoEntity.toString());
                 }
+
                 sendMsg(msg, stringBuilder.toString(), true);
             }
+
             else {
                 sendMsg(msg, "You do not have any tasks!", true);
             }
-
         }
+
         else if (txt.equals("Find not completed")){
             Set<TodoEntity>  todoEntities = findAllByStatus(msg.getChatId(), TodoStatus.NOT_COMPLETED);
+
             if (todoEntities.isEmpty()) {
                 sendMsg(msg, "You do not have not completed tasks", true);
             }
+
             else{
                 StringBuilder stringBuilder = new StringBuilder("Not completed tasks\n\n");
+
                 for (TodoEntity todoEntity : todoEntities) {
                     stringBuilder.append(todoEntity.toString());
                 }
+
                 sendMsg(msg, stringBuilder.toString(), true);
             }
         }
+
         else if (txt.equals("Find tasks by due")) {
             dueMap.put(msg.getChatId(), true);
             sendMsg(msg, "Enter a date, please(dd-mm-yyyy)", false);
         }
+
         else if (txt.equals("Mark completed")) {
             markMap.put(msg.getChatId(), true);
             sendMsg(msg, "Enter a number of task, please", false);
         }
+
         else if (txt.equals("Create task")) {
             createMap.put(msg.getChatId(), new Pair<>(0, new TodoEntity()));
             sendMsg(msg, "Enter a date of task, please(dd-mm-yyyy)", false);
         }
+
         else if(dueMap.containsKey(msg.getChatId())) {
             try {
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
                 Date due = formatter.parse(txt);
                 dueMap.remove(msg.getChatId());
                 Set<TodoEntity>  todoEntities = findAllforDate(msg.getChatId(), due);
+
                 if (todoEntities.isEmpty()) {
                     sendMsg(msg, "You do not have tasks on this date", true);
                 }
+
                 else{
                     StringBuilder stringBuilder = new StringBuilder("Tasks on this date\n\n");
+
                     for (TodoEntity todoEntity : todoEntities) {
                         stringBuilder.append(todoEntity.toString());
                     }
+
                     sendMsg(msg, stringBuilder.toString(), true);
                 }
             }
             catch(ParseException e) {
                 sendMsg(msg, errorMSG, true);
             }
-
-
         }
         else if(markMap.containsKey(msg.getChatId())) {
             TodoEntity todoEntity = repository.findById(Integer.parseInt(txt));
+
             if (todoEntity == null) {
                 sendMsg(msg,errorMSG, true);
             }
+
             else {
                 markMap.remove(msg.getChatId());
                 markCompleted(Integer.parseInt(txt));
                 sendMsg(msg, "Task status was changed successfully", true);
             }
         }
+
         else if(createMap.containsKey(msg.getChatId())) {
             if (createMap.get(msg.getChatId()).getKey().equals(0)) {
                 TodoEntity todoEntity = createMap.get(msg.getChatId()).getValue();
@@ -154,6 +192,7 @@ public class BotService extends TelegramLongPollingBot {
                     sendMsg(msg, errorMSG, true);
                 }
             }
+
             else if (createMap.get(msg.getChatId()).getKey().equals(1)) {
                 TodoEntity todoEntity = createMap.get(msg.getChatId()).getValue();
                 todoEntity.setText(txt);
@@ -161,11 +200,14 @@ public class BotService extends TelegramLongPollingBot {
                 createMap.get(msg.getChatId()).setKey(2);
                 createMap.get(msg.getChatId()).setValue(todoEntity);
             }
+
             else if (createMap.get(msg.getChatId()).getKey().equals(2)) {
                 TodoEntity todoEntity = createMap.get(msg.getChatId()).getValue();
+
                 if (!txt.equals("LOW") && !txt.equals("MIDDLE") && !txt.equals("HIGH")) {
                     sendMsg(msg,errorMSG,true);
                 }
+
                 else {
                     todoEntity.setPriority(TodoPriority.valueOf(txt));
                     todoEntity.setStatus(TodoStatus.NOT_COMPLETED);
