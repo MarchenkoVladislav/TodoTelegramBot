@@ -130,9 +130,8 @@ public class BotService extends TelegramLongPollingBot {
         }
     }
 
-    @Scheduled(cron = "0 34 0 * * *")
+    @Scheduled(cron = "0 0 8 * * ? ?")
     public void notifyUsers() {
-        System.out.println("here");
         for (Map.Entry<Long, String> user : currentUsers.entrySet()) {
             Set<TodoEntity> tasksForToday = findTasksForToday(
                     repository.findAllByUserIdAndStatusOrderByIdAsc(user.getKey(), TodoStatus.NOT_COMPLETED)
