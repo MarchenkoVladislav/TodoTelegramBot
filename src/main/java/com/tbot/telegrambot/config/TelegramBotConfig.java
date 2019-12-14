@@ -1,17 +1,28 @@
 package com.tbot.telegrambot.config;
 
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 @Configuration
-@PropertySource("classpath:telegram.properties")
-@Data
+@PropertySources({
+        @PropertySource("classpath:telegram.properties"),
+        @PropertySource("classpath:messages.properties"),
+        @PropertySource("classpath:commands.properties")
+})
 public class TelegramBotConfig {
-    @Value("${telegram.username}")
-    private String username;
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer placeHolderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 
-    @Value("${telegram.token}")
-    private String token;
+    @Bean
+    public SimpleDateFormat simpleDateFormat() {
+        return new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+    }
 }

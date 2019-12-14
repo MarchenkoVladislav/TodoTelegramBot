@@ -9,11 +9,13 @@ import java.util.Set;
 
 
 public interface TodoRepository extends JpaRepository<TodoEntity, Integer> {
+    boolean existsById(int id);
+
     TodoEntity findById(int id);
 
-    Set<TodoEntity> findAllByUserIDOrderByIdAsc(long user);
+    Set<TodoEntity> findAllByUserIdOrderByIdAsc(long user);
 
-    Set<TodoEntity> findAllByUserIDAndStatusOrderByIdAsc(long user, TodoStatus status);
+    Set<TodoEntity> findAllByUserIdAndStatusOrderByIdAsc(long user, TodoStatus status);
 
-    Set<TodoEntity> findAllByUserIDAndDueOrderByIdAsc(long user, Date due);
+    Set<TodoEntity> findAllByUserIdAndDueDateOrderByIdAsc(long user, Date due);
 }
