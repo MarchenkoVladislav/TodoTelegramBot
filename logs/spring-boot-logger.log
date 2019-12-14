@@ -1,851 +1,107 @@
-2019-12-14 21:45:42,097 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 25772 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 21:45:42,099 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 21:45:42,101 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 21:45:43,269 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 21:45:43,358 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 62ms. Found 1 repository interfaces.
-2019-12-14 21:45:43,480 INFO org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor [main] @Bean method TelegramBotConfig.placeHolderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
-2019-12-14 21:45:43,867 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 21:45:44,362 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 21:45:44,375 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:45:44,376 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 21:45:44,376 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 21:45:44,537 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 21:45:44,537 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2272 ms
-2019-12-14 21:45:44,767 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 21:45:44,875 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 21:45:45,167 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 21:45:45,239 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 21:45:49,121 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 21:45:49,150 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 21:46:19,321 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 21:46:19,505 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:46:20,525 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 21:46:20,641 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:46:21,607 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:46:21,638 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 21:46:21,642 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 40.841 seconds (JVM running for 42.702)
-2019-12-14 21:46:51,703 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:46:51,704 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:46:51,707 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 21:46:51,721 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 21:47:37,604 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 26180 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 21:47:37,606 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 21:47:37,607 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 21:47:38,281 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 21:47:38,317 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 31ms. Found 1 repository interfaces.
-2019-12-14 21:47:38,395 INFO org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor [main] @Bean method TelegramBotConfig.placeHolderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
-2019-12-14 21:47:38,467 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 21:47:38,602 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 21:47:38,607 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:47:38,607 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 21:47:38,608 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 21:47:38,701 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 21:47:38,702 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1064 ms
-2019-12-14 21:47:38,808 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 21:47:38,837 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 21:47:38,904 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 21:47:38,959 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 21:47:42,283 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 21:47:42,295 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 21:48:07,052 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 21:48:07,058 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:48:07,573 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 21:48:07,640 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:48:08,132 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:48:08,142 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 21:48:08,145 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 30.943 seconds (JVM running for 31.392)
-2019-12-14 21:48:39,483 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Executor] BOTSESSION
-java.lang.NullPointerException: null
-	at com.tbot.telegrambot.bot.BotService.markCompleted(BotService.java:304)
-	at com.tbot.telegrambot.bot.BotService.updateTaskStatus(BotService.java:196)
-	at com.tbot.telegrambot.bot.BotService.onUpdateReceived(BotService.java:90)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-	at org.telegram.telegrambots.meta.generics.LongPollingBot.onUpdatesReceived(LongPollingBot.java:27)
-	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$HandlerThread.run(DefaultBotSession.java:306)
-2019-12-14 21:48:59,197 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:48:59,198 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:48:59,201 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 21:48:59,215 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 21:51:09,221 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 26643 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 21:51:09,223 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 21:51:09,224 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 21:51:09,796 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 21:51:09,829 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28ms. Found 1 repository interfaces.
-2019-12-14 21:51:09,919 INFO org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor [main] @Bean method TelegramBotConfig.placeHolderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
-2019-12-14 21:51:10,014 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 21:51:10,177 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 21:51:10,183 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:51:10,183 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 21:51:10,184 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 21:51:10,273 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 21:51:10,274 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1012 ms
-2019-12-14 21:51:10,371 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 21:51:10,395 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 21:51:10,441 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 21:51:10,510 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 21:51:13,733 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 21:51:13,757 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 21:51:40,186 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 21:51:40,192 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:51:40,568 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 21:51:40,633 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:51:41,222 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:51:41,232 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 21:51:41,234 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 32.449 seconds (JVM running for 33.076)
-2019-12-14 21:52:46,200 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:52:46,201 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:52:46,204 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 21:52:46,222 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 21:55:25,478 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 27248 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 21:55:25,482 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 21:55:25,483 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 21:55:26,116 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 21:55:26,147 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27ms. Found 1 repository interfaces.
-2019-12-14 21:55:26,225 INFO org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor [main] @Bean method TelegramBotConfig.placeHolderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
-2019-12-14 21:55:26,303 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 21:55:26,471 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 21:55:26,476 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:55:26,477 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 21:55:26,477 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 21:55:26,529 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 21:55:26,529 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 970 ms
-2019-12-14 21:55:26,608 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 21:55:26,633 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 21:55:26,682 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 21:55:26,732 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 21:55:29,029 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 21:55:29,045 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 21:55:57,503 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 21:55:57,516 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:55:57,941 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 21:55:58,032 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:55:58,590 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:55:58,600 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 21:55:58,602 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 33.452 seconds (JVM running for 34.149)
-2019-12-14 21:56:06,684 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:56:06,687 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:56:06,690 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 21:56:06,711 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 21:56:10,318 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 27514 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 21:56:10,320 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 21:56:10,320 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 21:56:10,856 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 21:56:10,892 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 31ms. Found 1 repository interfaces.
-2019-12-14 21:56:10,988 INFO org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor [main] @Bean method TelegramBotConfig.placeHolderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
-2019-12-14 21:56:11,093 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 21:56:11,258 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 21:56:11,263 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:56:11,263 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 21:56:11,264 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 21:56:11,328 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 21:56:11,328 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 970 ms
-2019-12-14 21:56:11,435 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 21:56:11,460 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 21:56:11,504 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 21:56:11,553 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 21:56:14,274 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 21:56:14,286 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 21:56:46,725 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 21:56:46,731 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:56:47,448 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 21:56:47,537 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:56:48,101 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:56:48,111 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 21:56:48,113 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 38.126 seconds (JVM running for 38.54)
-2019-12-14 21:57:11,585 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:57:11,586 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:57:11,589 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 21:57:11,597 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 21:59:29,755 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 28030 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 21:59:29,757 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 21:59:29,757 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 21:59:30,506 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 21:59:30,544 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 33ms. Found 1 repository interfaces.
-2019-12-14 21:59:30,632 INFO org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor [main] @Bean method TelegramBotConfig.placeHolderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
-2019-12-14 21:59:30,707 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 21:59:30,845 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 21:59:30,850 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:59:30,850 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 21:59:30,851 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 21:59:30,902 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 21:59:30,902 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1117 ms
-2019-12-14 21:59:31,000 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 21:59:31,035 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 21:59:31,084 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 21:59:31,133 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 21:59:33,730 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 21:59:33,755 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 21:59:55,228 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 21:59:55,234 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 21:59:55,610 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 21:59:55,677 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 21:59:56,190 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 21:59:56,201 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 21:59:56,204 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 26.798 seconds (JVM running for 27.288)
-2019-12-14 22:05:43,039 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:05:43,041 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:05:43,045 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:05:43,054 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:06:33,565 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 28592 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:06:33,567 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:06:33,568 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:06:34,055 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:06:34,095 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 35ms. Found 1 repository interfaces.
-2019-12-14 22:06:34,208 INFO org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor [main] @Bean method TelegramBotConfig.placeHolderConfigurer is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
-2019-12-14 22:06:34,478 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:06:34,633 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:06:34,638 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:06:34,638 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:06:34,638 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:06:34,840 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:06:34,840 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1241 ms
-2019-12-14 22:06:34,938 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:06:34,966 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:06:35,029 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:06:35,100 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:06:36,698 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:06:36,720 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:06:54,119 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:06:54,137 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:06:54,557 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:06:54,635 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:06:55,435 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:06:55,446 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:06:55,448 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 22.224 seconds (JVM running for 24.009)
-2019-12-14 22:07:32,079 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:07:32,080 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:07:32,083 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:07:32,091 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:07:36,696 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 28848 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:07:36,699 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:07:36,700 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:07:37,331 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:07:37,367 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 31ms. Found 1 repository interfaces.
-2019-12-14 22:07:37,552 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:07:37,702 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:07:37,707 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:07:37,708 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:07:37,708 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:07:37,766 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:07:37,767 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1025 ms
-2019-12-14 22:07:37,877 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:07:37,920 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:07:37,974 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:07:38,037 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:07:39,669 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:07:39,695 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:07:57,739 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:07:57,757 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:07:58,201 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:07:58,272 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:07:59,103 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:07:59,114 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:07:59,116 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 22.837 seconds (JVM running for 23.64)
-2019-12-14 22:08:35,436 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:08:35,438 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:08:35,442 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:08:35,456 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:11:13,060 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 29511 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:11:13,063 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:11:13,063 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:11:13,657 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:11:13,692 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 30ms. Found 1 repository interfaces.
-2019-12-14 22:11:13,876 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:11:14,044 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:11:14,050 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:11:14,051 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:11:14,051 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:11:14,136 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:11:14,137 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1029 ms
-2019-12-14 22:11:14,260 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:11:14,292 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:11:14,370 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:11:14,430 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:11:15,983 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:11:16,008 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:18:50,230 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 30393 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:18:50,234 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:18:50,235 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:18:50,964 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:18:51,011 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 40ms. Found 1 repository interfaces.
-2019-12-14 22:18:51,236 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:18:51,387 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:18:51,393 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:18:51,393 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:18:51,393 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:18:51,462 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:18:51,462 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1145 ms
-2019-12-14 22:18:51,579 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:18:51,611 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:18:51,676 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:18:51,726 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:18:54,097 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:18:54,112 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:19:11,928 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:19:11,934 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:19:12,412 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:19:12,482 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:19:13,347 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:19:13,402 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:19:13,406 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 23.933 seconds (JVM running for 24.956)
-2019-12-14 22:22:48,095 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [HikariPool-1 housekeeper] HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m53s897ms461µs900ns).
-2019-12-14 22:23:07,170 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:23:07,171 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:23:07,174 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:23:07,196 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:23:21,268 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 31134 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:23:21,271 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:23:21,272 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:23:21,963 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:23:21,995 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28ms. Found 1 repository interfaces.
-2019-12-14 22:23:22,158 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:23:22,293 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:23:22,297 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:23:22,298 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:23:22,298 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:23:22,351 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:23:22,351 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1033 ms
-2019-12-14 22:23:22,427 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:23:22,452 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:23:22,498 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:23:22,538 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:23:24,361 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:23:24,382 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:23:56,012 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 31283 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:23:56,015 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:23:56,016 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:23:56,586 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:23:56,619 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28ms. Found 1 repository interfaces.
-2019-12-14 22:23:56,762 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:23:56,951 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:23:56,957 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:23:56,958 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:23:56,958 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:23:57,043 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:23:57,043 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 979 ms
-2019-12-14 22:23:57,133 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:23:57,159 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:23:57,207 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:23:57,250 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:23:58,898 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:23:58,910 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:24:16,554 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:24:16,578 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:24:17,113 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:24:17,186 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:24:18,131 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:24:18,146 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:24:18,149 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 22.535 seconds (JVM running for 23.303)
-2019-12-14 22:29:26,162 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:29:26,163 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:29:26,168 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:29:26,174 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:29:31,974 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 32076 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:29:31,977 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:29:31,978 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:29:32,522 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:29:32,554 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28ms. Found 1 repository interfaces.
-2019-12-14 22:29:32,697 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:29:32,861 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:29:32,869 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:29:32,870 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:29:32,870 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:29:32,936 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:29:32,936 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 903 ms
-2019-12-14 22:29:33,025 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:29:33,051 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:29:33,106 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:29:33,148 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:29:34,789 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:29:34,813 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:29:52,086 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:29:52,097 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:29:52,834 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:29:52,911 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:29:53,474 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:29:53,485 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:29:53,487 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 21.957 seconds (JVM running for 22.787)
-2019-12-14 22:31:12,660 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:31:12,664 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:31:12,669 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:31:12,680 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:31:17,643 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 32346 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:31:17,646 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:31:17,647 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:31:18,218 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:31:18,251 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28ms. Found 1 repository interfaces.
-2019-12-14 22:31:18,405 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:31:18,558 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:31:18,563 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:31:18,563 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:31:18,564 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:31:18,617 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:31:18,618 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 934 ms
-2019-12-14 22:31:18,695 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:31:18,720 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:31:18,769 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:31:18,818 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:31:20,411 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:31:20,435 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:31:38,030 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:31:38,042 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:31:38,411 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:31:38,477 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:31:39,009 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:31:39,022 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:31:39,024 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 21.699 seconds (JVM running for 22.247)
-2019-12-14 22:32:28,867 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:32:28,869 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:32:28,872 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:32:28,884 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:32:33,707 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 32683 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:32:33,710 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:32:33,710 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:32:34,222 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:32:34,254 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27ms. Found 1 repository interfaces.
-2019-12-14 22:32:34,401 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:32:34,539 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:32:34,544 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:32:34,544 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:32:34,545 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:32:34,609 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:32:34,610 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 866 ms
-2019-12-14 22:32:34,689 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:32:34,714 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:32:34,759 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:32:34,801 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:32:36,315 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:32:36,339 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:32:54,817 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:32:54,827 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:32:55,359 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:32:55,432 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:32:56,101 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:32:56,132 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:32:56,137 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 22.764 seconds (JVM running for 23.32)
-2019-12-14 22:32:57,514 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:32:57,516 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:32:57,520 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:32:57,527 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:33:14,145 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 484 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:33:14,147 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:33:14,147 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:33:14,660 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:33:14,693 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28ms. Found 1 repository interfaces.
-2019-12-14 22:33:14,844 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:33:14,990 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2019-12-14 22:33:14,995 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:33:14,995 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
-2019-12-14 22:33:14,995 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
-2019-12-14 22:33:15,059 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2019-12-14 22:33:15,059 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 875 ms
-2019-12-14 22:33:15,135 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:33:15,160 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:33:15,210 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:33:15,271 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:33:16,826 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2019-12-14 22:33:16,850 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:33:34,820 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2019-12-14 22:33:34,838 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:33:35,235 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-12-14 22:33:35,301 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:33:35,828 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2019-12-14 22:33:35,838 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2019-12-14 22:33:35,841 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 22.019 seconds (JVM running for 22.52)
-2019-12-14 22:35:20,849 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2019-12-14 22:35:20,851 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2019-12-14 22:35:20,855 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2019-12-14 22:35:20,867 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2019-12-14 22:51:55,279 WARN org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [main] 
-
-Found multiple occurrences of org.json.JSONObject on the class path:
-
-	jar:file:/home/ishvatov/.m2/repository/org/json/json/20180813/json-20180813.jar!/org/json/JSONObject.class
-	jar:file:/home/ishvatov/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
-
-You may wish to exclude one of them to ensure predictable runtime behavior
-
-2019-12-14 22:51:55,305 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplicationTests on ishvatov with PID 3251 (started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 22:51:55,306 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 22:51:55,308 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 22:51:55,990 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 22:51:56,056 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 57ms. Found 1 repository interfaces.
-2019-12-14 22:51:56,508 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-12-14 22:51:56,783 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 22:51:56,907 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 22:51:57,027 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 22:51:57,119 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:51:57,123 WARN org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata : Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-2019-12-14 22:51:57,144 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 22:51:57,755 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 22:51:57,760 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-2019-12-14 22:51:57,770 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-14 22:51:57,775 ERROR org.springframework.boot.SpringApplication [main] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:125)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:337)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:342)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:337)
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
-	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
-	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:313)
-	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:743)
-	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:742)
-	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:647)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:336)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:259)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:252)
-	at java.util.Optional.orElseGet(Optional.java:267)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:251)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
-	... 80 common frames omitted
-Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:110)
-	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:320)
-	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:109)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43)
-	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60)
-	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:40)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59)
-	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:155)
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	... 84 common frames omitted
-2019-12-14 22:51:57,779 ERROR org.springframework.test.context.TestContextManager [main] Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@4efac082] to prepare test instance [com.tbot.telegrambot.TelegramBotApplicationTests@62d40e31]
-java.lang.IllegalStateException: Failed to load ApplicationContext
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:132)
-	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:123)
-	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
-	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
-	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:244)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:98)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$5(ClassBasedTestDescriptor.java:337)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:342)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$6(ClassBasedTestDescriptor.java:337)
-	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)
-	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
-	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1382)
-	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482)
-	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472)
-	at java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:313)
-	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:743)
-	at java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:742)
-	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:647)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:336)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:259)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$2(ClassBasedTestDescriptor.java:252)
-	at java.util.Optional.orElseGet(Optional.java:267)
-	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$3(ClassBasedTestDescriptor.java:251)
-	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:29)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$1(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:107)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:75)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at java.util.ArrayList.forEach(ArrayList.java:1257)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:38)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$5(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$7(NodeTestTask.java:125)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:135)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:123)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:122)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:80)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:32)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:51)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:220)
-	at org.junit.platform.launcher.core.DefaultLauncher.lambda$execute$6(DefaultLauncher.java:188)
-	at org.junit.platform.launcher.core.DefaultLauncher.withInterceptedStreams(DefaultLauncher.java:202)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:181)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:128)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invokeAllTests(JUnitPlatformProvider.java:150)
-	at org.apache.maven.surefire.junitplatform.JUnitPlatformProvider.invoke(JUnitPlatformProvider.java:124)
-	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:125)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
-	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124)
-	... 65 common frames omitted
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
-	... 80 common frames omitted
-Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:110)
-	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:320)
-	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:109)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43)
-	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60)
-	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:40)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59)
-	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:155)
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	... 84 common frames omitted
-2019-12-14 23:13:19,376 INFO org.springframework.boot.StartupInfoLogger [com.tbot.telegrambot.TelegramBotApplication.main()] Starting TelegramBotApplication on ishvatov with PID 6214 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 23:13:19,380 DEBUG org.springframework.boot.StartupInfoLogger [com.tbot.telegrambot.TelegramBotApplication.main()] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 23:13:19,381 INFO org.springframework.boot.SpringApplication [com.tbot.telegrambot.TelegramBotApplication.main()] No active profile set, falling back to default profiles: default
-2019-12-14 23:13:19,752 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [com.tbot.telegrambot.TelegramBotApplication.main()] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 23:13:19,889 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [com.tbot.telegrambot.TelegramBotApplication.main()] Finished Spring Data repository scanning in 127ms. Found 1 repository interfaces.
-2019-12-14 23:13:20,230 INFO org.hibernate.jpa.internal.util.LogHelper [com.tbot.telegrambot.TelegramBotApplication.main()] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 23:13:20,283 INFO org.hibernate.Version [com.tbot.telegrambot.TelegramBotApplication.main()] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 23:13:20,368 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [com.tbot.telegrambot.TelegramBotApplication.main()] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 23:13:20,450 INFO com.zaxxer.hikari.HikariDataSource [com.tbot.telegrambot.TelegramBotApplication.main()] HikariPool-1 - Starting...
-2019-12-14 23:13:20,454 WARN org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator [com.tbot.telegrambot.TelegramBotApplication.main()] HHH000342: Could not obtain connection to query metadata : Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-2019-12-14 23:13:20,464 INFO org.hibernate.dialect.Dialect [com.tbot.telegrambot.TelegramBotApplication.main()] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 23:13:20,902 INFO com.zaxxer.hikari.HikariDataSource [com.tbot.telegrambot.TelegramBotApplication.main()] HikariPool-1 - Starting...
-2019-12-14 23:13:20,905 WARN org.springframework.context.support.AbstractApplicationContext [com.tbot.telegrambot.TelegramBotApplication.main()] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-2019-12-14 23:13:20,911 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [com.tbot.telegrambot.TelegramBotApplication.main()] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-14 23:13:20,914 ERROR org.springframework.boot.SpringApplication [com.tbot.telegrambot.TelegramBotApplication.main()] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.tbot.telegrambot.TelegramBotApplication.main(TelegramBotApplication.java:11)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.codehaus.mojo.exec.ExecJavaMojo$1.run(ExecJavaMojo.java:293)
-	at java.lang.Thread.run(Thread.java:748)
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
-	... 21 common frames omitted
-Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:110)
-	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:320)
-	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:109)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43)
-	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60)
-	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:40)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59)
-	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:155)
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	... 25 common frames omitted
-2019-12-14 23:27:23,344 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication v0.0.1-SNAPSHOT on ishvatov with PID 8914 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/repo/com/tbot/telegram-bot/0.0.1-SNAPSHOT/telegram-bot-0.0.1-SNAPSHOT.jar started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
-2019-12-14 23:27:23,347 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
-2019-12-14 23:27:23,348 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
-2019-12-14 23:27:23,714 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-12-14 23:27:23,764 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43ms. Found 1 repository interfaces.
-2019-12-14 23:27:24,182 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2019-12-14 23:27:24,228 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
-2019-12-14 23:27:24,341 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2019-12-14 23:27:24,428 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 23:27:24,431 WARN org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator [main] HHH000342: Could not obtain connection to query metadata : Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-2019-12-14 23:27:24,441 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2019-12-14 23:27:24,840 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2019-12-14 23:27:24,844 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-2019-12-14 23:27:24,851 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener [main] 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2019-12-14 23:27:24,853 ERROR org.springframework.boot.SpringApplication [main] Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1803)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
-	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
-	at com.tbot.telegrambot.TelegramBotApplication.main(TelegramBotApplication.java:11)
-Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:403)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799)
-	... 15 common frames omitted
-Caused by: java.lang.RuntimeException: Driver org.postgresql.Driver claims to not accept jdbcUrl, ${DB_URL}
-	at com.zaxxer.hikari.util.DriverDataSource.<init>(DriverDataSource.java:110)
-	at com.zaxxer.hikari.pool.PoolBase.initializeDataSource(PoolBase.java:320)
-	at com.zaxxer.hikari.pool.PoolBase.<init>(PoolBase.java:109)
-	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:108)
-	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122)
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180)
-	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:43)
-	at org.hibernate.tool.schema.internal.exec.ImprovedExtractionContextImpl.getJdbcConnection(ImprovedExtractionContextImpl.java:60)
-	at org.hibernate.tool.schema.extract.internal.SequenceInformationExtractorLegacyImpl.extractMetadata(SequenceInformationExtractorLegacyImpl.java:40)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.initializeSequences(DatabaseInformationImpl.java:65)
-	at org.hibernate.tool.schema.extract.internal.DatabaseInformationImpl.<init>(DatabaseInformationImpl.java:59)
-	at org.hibernate.tool.schema.internal.Helper.buildDatabaseInformation(Helper.java:155)
-	at org.hibernate.tool.schema.internal.AbstractSchemaMigrator.doMigration(AbstractSchemaMigrator.java:96)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.performDatabaseAction(SchemaManagementToolCoordinator.java:184)
-	at org.hibernate.tool.schema.spi.SchemaManagementToolCoordinator.process(SchemaManagementToolCoordinator.java:73)
-	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:320)
-	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:462)
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1249)
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58)
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365)
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391)
-	... 19 common frames omitted
+2019-12-15 00:02:10,285 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 13583 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
+2019-12-15 00:02:10,289 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-12-15 00:02:10,291 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-15 00:02:10,903 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-15 00:02:10,936 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 28ms. Found 1 repository interfaces.
+2019-12-15 00:02:11,084 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-15 00:02:11,262 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2019-12-15 00:02:11,269 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-15 00:02:11,270 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-15 00:02:11,270 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-15 00:02:11,367 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-15 00:02:11,367 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1003 ms
+2019-12-15 00:02:11,483 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-12-15 00:02:11,508 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
+2019-12-15 00:02:11,554 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-12-15 00:02:11,597 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-12-15 00:02:14,121 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-12-15 00:02:14,133 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-12-15 00:02:47,820 INFO org.springframework.boot.StartupInfoLogger [main] Starting TelegramBotApplication on ishvatov with PID 13716 (/home/ishvatov/programming/git/java/TodoTelegramBot/target/classes started by ishvatov in /home/ishvatov/programming/git/java/TodoTelegramBot)
+2019-12-15 00:02:47,822 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE
+2019-12-15 00:02:47,823 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2019-12-15 00:02:48,395 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-12-15 00:02:48,425 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 27ms. Found 1 repository interfaces.
+2019-12-15 00:02:48,568 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-15 00:02:48,711 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2019-12-15 00:02:48,716 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2019-12-15 00:02:48,717 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2019-12-15 00:02:48,717 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-15 00:02:48,783 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2019-12-15 00:02:48,783 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 929 ms
+2019-12-15 00:02:48,866 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2019-12-15 00:02:48,892 INFO org.hibernate.Version [main] HHH000412: Hibernate Core {5.4.8.Final}
+2019-12-15 00:02:48,942 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2019-12-15 00:02:48,990 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2019-12-15 00:02:50,969 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2019-12-15 00:02:50,981 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2019-12-15 00:03:12,829 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2019-12-15 00:03:12,845 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-12-15 00:03:13,241 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-12-15 00:03:13,306 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-15 00:03:14,071 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2019-12-15 00:03:14,082 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-15 00:03:14,085 INFO org.springframework.boot.StartupInfoLogger [main] Started TelegramBotApplication in 26.601 seconds (JVM running for 27.251)
+2019-12-15 00:03:18,079 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:22,227 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:26,500 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:30,648 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:34,897 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:39,096 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:43,294 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:47,446 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:51,596 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:03:55,748 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:04:00,195 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:04:04,337 ERROR org.telegram.telegrambots.meta.logging.BotLogger [TheBestToDoBot Telegram Connection] BOTSESSION
+org.telegram.telegrambots.meta.exceptions.TelegramApiRequestException: Error getting updates
+	at org.telegram.telegrambots.meta.api.methods.updates.GetUpdates.deserializeResponse(GetUpdates.java:119)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.getUpdatesFromServer(DefaultBotSession.java:257)
+	at org.telegram.telegrambots.updatesreceivers.DefaultBotSession$ReaderThread.run(DefaultBotSession.java:186)
+2019-12-15 00:04:07,497 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-15 00:04:07,498 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-12-15 00:04:07,501 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2019-12-15 00:04:13,690 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

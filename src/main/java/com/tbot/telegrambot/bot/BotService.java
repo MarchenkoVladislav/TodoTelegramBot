@@ -30,6 +30,13 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class BotService extends TelegramLongPollingBot {
+    // type of the keyboard
+    private enum KeyboardType {
+        NO_KEYBOARD,
+        DEFAULT_KEYBOARD,
+        PRIORITY_KEYBOARD
+    }
+
     private final TodoRepository repository;
     private final Environment environment;
     private final SimpleDateFormat formatter;
@@ -81,24 +88,24 @@ public class BotService extends TelegramLongPollingBot {
             clearUserCommands(message.getChatId());
 
             if (repository.findAllByUserIdOrderByIdAsc(message.getChatId()).isEmpty()) {
-                sendMessage(message, environment.getProperty("no-tasks-msg"), false);
+                sendMessage(message, environment.getProperty("no-tasks-msg"), KeyboardType.NO_KEYBOARD);
             } else {
                 taskDueDateUsers.add(message.getChatId());
-                sendMessage(message, environment.getProperty("input-date-msg"), false);
+                sendMessage(message, environment.getProperty("input-date-msg"), KeyboardType.NO_KEYBOARD);
             }
         } else if (command.equals(environment.getProperty("mark-task-as-completed-cmd"))) {
             clearUserCommands(message.getChatId());
 
             if (repository.findAllByUserIdAndStatusOrderByIdAsc(message.getChatId(), TodoStatus.NOT_COMPLETED).isEmpty()) {
-                sendMessage(message, environment.getProperty("no-tasks-msg"), false);
+                sendMessage(message, environment.getProperty("no-tasks-msg"), KeyboardType.NO_KEYBOARD);
             } else {
                 taskStatusUsers.add(message.getChatId());
-                sendMessage(message, environment.getProperty("input-task-id-msg"), false);
+                sendMessage(message, environment.getProperty("input-task-id-msg"), KeyboardType.NO_KEYBOARD);
             }
         } else if (command.equals(environment.getProperty("create-task-cmd"))) {
             clearUserCommands(message.getChatId());
             createTaskMap.put(message.getChatId(), new Pair<>(0, new TodoEntity()));
-            sendMessage(message, environment.getProperty("input-task-due-date"), false);
+            sendMessage(message, environment.getProperty("input-task-due-date"), KeyboardType.NO_KEYBOARD);
         } else if (taskDueDateUsers.contains(message.getChatId())) {
             taskDueDateUsers.remove(message.getChatId());
             findTasksByDueDate(message);
@@ -117,7 +124,7 @@ public class BotService extends TelegramLongPollingBot {
                     setTaskPriority(message);
                     break;
                 default:
-                    sendMessage(message, environment.getProperty("error-msg"), true);
+                    sendMessage(message, environment.getProperty("error-msg"), KeyboardType.DEFAULT_KEYBOARD);
                     break;
             }
         }
@@ -157,23 +164,23 @@ public class BotService extends TelegramLongPollingBot {
     }
 
     private void startCmd(Message message) {
-        sendMessage(message, environment.getProperty("hello-msg"), true);
+        sendMessage(message, environment.getProperty("hello-msg"), KeyboardType.DEFAULT_KEYBOARD);
     }
 
     private void helpCmd(Message message) {
-        sendMessage(message, environment.getProperty("help-msg"), true);
+        sendMessage(message, environment.getProperty("help-msg"), KeyboardType.DEFAULT_KEYBOARD);
     }
 
     private void findNotCompletedTasksCmd(Message message) {
         Set<TodoEntity> todoEntities = findAllNotCompleted(message.getChatId());
         if (todoEntities.isEmpty()) {
-            sendMessage(message, environment.getProperty("no-tasks-msg"), true);
+            sendMessage(message, environment.getProperty("no-tasks-msg"), KeyboardType.DEFAULT_KEYBOARD);
         } else {
             StringBuilder stringBuilder = new StringBuilder("Not completed tasks:\n\n");
             for (TodoEntity todoEntity : todoEntities) {
                 stringBuilder.append(todoEntity.toString());
             }
-            sendMessage(message, stringBuilder.toString(), true);
+            sendMessage(message, stringBuilder.toString(), KeyboardType.DEFAULT_KEYBOARD);
         }
     }
 
@@ -184,9 +191,9 @@ public class BotService extends TelegramLongPollingBot {
             for (TodoEntity todoEntity : usersTasks) {
                 stringBuilder.append(todoEntity.toString());
             }
-            sendMessage(message, stringBuilder.toString(), true);
+            sendMessage(message, stringBuilder.toString(), KeyboardType.DEFAULT_KEYBOARD);
         } else {
-            sendMessage(message, environment.getProperty("no-tasks-msg"), true);
+            sendMessage(message, environment.getProperty("no-tasks-msg"), KeyboardType.DEFAULT_KEYBOARD);
         }
     }
 
@@ -196,16 +203,16 @@ public class BotService extends TelegramLongPollingBot {
 
             Set<TodoEntity> todoEntities = findAllByDueDate(message.getChatId(), due);
             if (todoEntities.isEmpty()) {
-                sendMessage(message, environment.getProperty("no-tasks-msg"), true);
+                sendMessage(message, environment.getProperty("no-tasks-msg"), KeyboardType.DEFAULT_KEYBOARD);
             } else {
                 StringBuilder stringBuilder = new StringBuilder("Tasks on this date:\n\n");
                 for (TodoEntity todoEntity : todoEntities) {
                     stringBuilder.append(todoEntity.toString());
                 }
-                sendMessage(message, stringBuilder.toString(), true);
+                sendMessage(message, stringBuilder.toString(), KeyboardType.DEFAULT_KEYBOARD);
             }
         } catch (ParseException e) {
-            sendMessage(message, environment.getProperty("error-msg"), true);
+            sendMessage(message, environment.getProperty("error-msg"), KeyboardType.DEFAULT_KEYBOARD);
         }
     }
 
@@ -213,13 +220,13 @@ public class BotService extends TelegramLongPollingBot {
         try {
             int id = Integer.parseInt(message.getText());
             if (!repository.existsById(id) || !repository.findById(id).getUserId().equals(message.getChatId())) {
-                sendMessage(message, environment.getProperty("error-msg"), true);
+                sendMessage(message, environment.getProperty("error-msg"), KeyboardType.DEFAULT_KEYBOARD);
             } else {
                 markCompleted(id);
-                sendMessage(message, environment.getProperty("update-success-msg"), true);
+                sendMessage(message, environment.getProperty("update-success-msg"), KeyboardType.DEFAULT_KEYBOARD);
             }
         } catch (NumberFormatException e) {
-            sendMessage(message, environment.getProperty("error-msg"), true);
+            sendMessage(message, environment.getProperty("error-msg"), KeyboardType.DEFAULT_KEYBOARD);
         }
     }
 
@@ -229,19 +236,19 @@ public class BotService extends TelegramLongPollingBot {
             Date dueDate = formatter.parse(message.getText());
 
             todoEntity.setDueDate(dueDate);
-            sendMessage(message, environment.getProperty("input-task-description"), false);
+            sendMessage(message, environment.getProperty("input-task-description"), KeyboardType.NO_KEYBOARD);
 
             createTaskMap.get(message.getChatId()).setKey(1);
             createTaskMap.get(message.getChatId()).setValue(todoEntity);
         } catch (ParseException e) {
-            sendMessage(message, environment.getProperty("error-msg"), true);
+            sendMessage(message, environment.getProperty("error-msg"), KeyboardType.DEFAULT_KEYBOARD);
         }
     }
 
     private void setTaskDescription(Message message) {
         TodoEntity todoEntity = createTaskMap.get(message.getChatId()).getValue();
         todoEntity.setDescription(message.getText());
-        sendMessage(message, environment.getProperty("input-task-priority"), false);
+        sendMessage(message, environment.getProperty("input-task-priority"), KeyboardType.PRIORITY_KEYBOARD);
 
         createTaskMap.get(message.getChatId()).setKey(2);
         createTaskMap.get(message.getChatId()).setValue(todoEntity);
@@ -255,30 +262,37 @@ public class BotService extends TelegramLongPollingBot {
             todoEntity.setPriority(priority);
             todoEntity.setStatus(TodoStatus.NOT_COMPLETED);
             todoEntity.setUserId(message.getChatId());
-            sendMessage(message, environment.getProperty("create-success-msg"), true);
+            sendMessage(message, environment.getProperty("create-success-msg"), KeyboardType.DEFAULT_KEYBOARD);
 
             createTask(todoEntity);
             createTaskMap.remove(message.getChatId());
         } catch (IllegalArgumentException e) {
-            sendMessage(message, environment.getProperty("error-msg"), true);
+            sendMessage(message, environment.getProperty("error-msg"), KeyboardType.DEFAULT_KEYBOARD);
         }
     }
 
     private void sendNotifyMessage(long chatId, String text) {
         try {
             SendMessage sendMessage = new SendMessage(chatId, text);
-            addKeyboard(sendMessage);
+            addDefaultKeyboard(sendMessage);
             execute(sendMessage);
         } catch (TelegramApiException e) {
             log.error("Exception has occurred in sendMessage()", e);
         }
     }
 
-    private void sendMessage(Message message, String text, boolean withKeyboard) {
+    private void sendMessage(Message message, String text, KeyboardType keyboardType) {
         try {
             SendMessage sendMessage = new SendMessage(message.getChatId(), text);
-            if (withKeyboard) {
-                addKeyboard(sendMessage);
+            switch (keyboardType) {
+                case NO_KEYBOARD:
+                    break;
+                case DEFAULT_KEYBOARD:
+                    addDefaultKeyboard(sendMessage);
+                    break;
+                case PRIORITY_KEYBOARD:
+                    addPriorityKeyboard(sendMessage);
+                    break;
             }
             execute(sendMessage);
         } catch (TelegramApiException e) {
@@ -286,13 +300,30 @@ public class BotService extends TelegramLongPollingBot {
         }
     }
 
-    private void addKeyboard(SendMessage sendMessage) {
+    private ReplyKeyboardMarkup configureReplyKeyboardMarkup(SendMessage sendMessage) {
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
         sendMessage.setReplyMarkup(replyKeyboardMarkup);
-        replyKeyboardMarkup.setSelective(true);
-        replyKeyboardMarkup.setResizeKeyboard(true);
+        replyKeyboardMarkup.setSelective(false);
+        replyKeyboardMarkup.setResizeKeyboard(false);
         replyKeyboardMarkup.setOneTimeKeyboard(false);
+        return replyKeyboardMarkup;
+    }
 
+    private void addPriorityKeyboard(SendMessage sendMessage) {
+        ReplyKeyboardMarkup replyKeyboardMarkup = configureReplyKeyboardMarkup(sendMessage);
+        List<KeyboardRow> keyboard = new ArrayList<>();
+
+        KeyboardRow keyboardFirstRow = new KeyboardRow();
+        keyboardFirstRow.add(environment.getProperty("priority-high-btn"));
+        keyboardFirstRow.add(environment.getProperty("priority-middle-btn"));
+        keyboardFirstRow.add(environment.getProperty("priority-low-btn"));
+        keyboard.add(keyboardFirstRow);
+
+        replyKeyboardMarkup.setKeyboard(keyboard);
+    }
+
+    private void addDefaultKeyboard(SendMessage sendMessage) {
+        ReplyKeyboardMarkup replyKeyboardMarkup = configureReplyKeyboardMarkup(sendMessage);
         List<KeyboardRow> keyboard = new ArrayList<>();
 
         KeyboardRow keyboardFirstRow = new KeyboardRow();
