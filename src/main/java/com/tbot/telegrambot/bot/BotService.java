@@ -130,7 +130,7 @@ public class BotService extends TelegramLongPollingBot {
         }
     }
 
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(cron = "0 25 0 * * ?")
     public void notifyUsers() {
         for (Map.Entry<Long, String> user : currentUsers.entrySet()) {
             Set<TodoEntity> tasksForToday = findTasksForToday(
