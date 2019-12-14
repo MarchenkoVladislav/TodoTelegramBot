@@ -1,1 +1,1 @@
-worker: sh target/bin/workerBot
+worker: mvn exec:java

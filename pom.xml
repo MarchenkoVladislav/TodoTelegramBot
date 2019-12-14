@@ -68,9 +68,12 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>com.heroku.sdk</groupId>
-                <artifactId>heroku-maven-plugin</artifactId>
-                <version>2.0.13</version>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <mainClass>com.tbot.telegrambot.TelegramBotApplication</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
