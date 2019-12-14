@@ -1,1 +1,1 @@
-worker: mvn exec:java
+worker: sudo apt-get install maven & mvn exec:java
