@@ -9,9 +9,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 @Entity
-@Table(name = "todo_entities")
+@Table(name = "todo_entity")
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -22,11 +23,11 @@ public class TodoEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "userID", nullable = false)
-    private Long userID;
+    @Column(name = "userId", nullable = false)
+    private Long userId;
 
     @Column(name = "text", nullable = false)
-    private String text;
+    private String description;
 
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
@@ -36,15 +37,28 @@ public class TodoEntity {
     @Enumerated(EnumType.STRING)
     private TodoPriority priority;
 
-    @Column(name = "due", nullable = false)
-    private Date due;
+    @Column(name = "dueDate", nullable = false)
+    private Date dueDate;
 
     @Override
     public String toString() {
-        return "Task #" + id +
-                ":\n" + text +
-                "\nstatus - " + status +
-                "\npriority - " + priority +
-                "\ndue date - " + due.toString().substring(0,10) + "\n\n";
+        String s = "Task #" + id +
+                ":\n" + description +
+                "\n- status - " + status.toString().replace("_", " ") +
+                "\n- priority - " + priority +
+                "\n- due date - " + dueDate.toString().substring(0, 10);
+
+        if (status == TodoStatus.NOT_COMPLETED) {
+            long diff = dueDate.getTime() - new Date().getTime();
+            long days = Math.abs(TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS));
+            if (diff > 0) {
+                s += "\n- days left - " + days;
+            } else if (diff < 0) {
+                s += "\n- expired " + days + " days ago";
+            }
+        }
+
+        s += "\n\n";
+        return s;
     }
 }
