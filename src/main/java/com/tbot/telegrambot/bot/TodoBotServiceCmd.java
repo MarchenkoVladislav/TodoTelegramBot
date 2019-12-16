@@ -98,7 +98,6 @@ public class TodoBotServiceCmd {
             } else {
                 TodoEntity todoEntity = repository.findById(id);
                 todoEntity.setStatus(TodoStatus.COMPLETED);
-                repository.save(todoEntity);
                 return new Pair<>(environment.getProperty("update-success-msg"), BotKeyboardType.DEFAULT_KEYBOARD);
             }
         } catch (NumberFormatException e) {
@@ -212,7 +211,6 @@ public class TodoBotServiceCmd {
         return repository.findAll()
                 .stream()
                 .map(TodoEntity::getUserId)
-                .distinct()
                 .collect(Collectors.toSet());
     }
 }
