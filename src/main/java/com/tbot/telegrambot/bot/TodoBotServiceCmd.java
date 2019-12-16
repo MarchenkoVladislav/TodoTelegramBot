@@ -106,6 +106,10 @@ public class TodoBotServiceCmd {
         }
     }
 
+    public void setIsCreatingTask(long userId) {
+        createTaskMap.put(userId, new Pair<>(0, new TodoEntity()));
+    }
+
     public boolean isCreatingTask(long userId) {
         return createTaskMap.containsKey(userId);
     }
@@ -151,11 +155,12 @@ public class TodoBotServiceCmd {
 
     private Pair<String, BotKeyboardType> setTaskDueDate(long userId, String dueDateText) {
         try {
-            TodoEntity todoEntity = new TodoEntity();
+            TodoEntity todoEntity = createTaskMap.get(userId).getValue();
             Date dueDate = formatter.parse(dueDateText);
 
             todoEntity.setDueDate(dueDate);
-            createTaskMap.put(userId, new Pair<>(1, todoEntity));
+            createTaskMap.get(userId).setKey(1);
+            createTaskMap.get(userId).setValue(todoEntity);
 
             return new Pair<>(environment.getProperty("input-task-description"), BotKeyboardType.NO_KEYBOARD);
         } catch (ParseException e) {
@@ -187,7 +192,8 @@ public class TodoBotServiceCmd {
 
             return new Pair<>(environment.getProperty("create-success-msg"), BotKeyboardType.DEFAULT_KEYBOARD);
         } catch (IllegalArgumentException e) {
-            return new Pair<>(environment.getProperty("error-msg"), BotKeyboardType.DEFAULT_KEYBOARD);
+
+            return new Pair<>(environment.getProperty("error-msg"), BotKeyboardType.PRIORITY_KEYBOARD);
         }
     }
 

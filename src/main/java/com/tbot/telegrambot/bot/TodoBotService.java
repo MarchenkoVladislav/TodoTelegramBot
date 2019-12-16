@@ -66,6 +66,7 @@ public class TodoBotService extends TelegramLongPollingBot {
             sendMessage(message, environment.getProperty("input-task-id-msg"), BotKeyboardType.NO_KEYBOARD);
         } else if (command.equals(environment.getProperty("create-task-cmd"))) {
             clearUserCommands(message.getChatId());
+            todoBotServiceCmd.setIsCreatingTask(message.getChatId());
             sendMessage(message, environment.getProperty("input-task-due-date"), BotKeyboardType.NO_KEYBOARD);
         } else if (taskDueDateUsers.contains(message.getChatId())) {
             taskDueDateUsers.remove(message.getChatId());
