@@ -9,11 +9,11 @@ Course project on the subject of Software Design of Peter the Great St. Petersbu
 -   [Features list](#features-list)
 -   [Communication with the Telegram server](#communication-with-the-telegram-server)
 -   [Usage](#Usage)
-    -   [How to find this bot](#bot-namehow-to-find-this-bot)
+    -   [How to find this bot](#how-to-find-this-bot)
     -   [Buttons and functionality](#buttons-and-functionality)
 -   [Testing](#Testing)
     -   [Test coverage](#test-coverage)
--   [Deployment](#Deploying)
+-   [Deployment](#Deployment)
 -   [Maintainers](#Maintainers)
 -   [License](#License)
 
@@ -31,11 +31,11 @@ This bot can:
 
 ## Communication with the Telegram server
 Communication between the backend and the Telegram is carried out by sending requests to the Telegram API by a unique token.
-To be able to do this, we use [TelegramBots](#https://github.com/rubenlagus/TelegramBots) library.
+To be able to do this, we use [TelegramBots](#www.github.com/rubenlagus/TelegramBots) library.
 
 
 ## Usage
-### Bot name(how to find this bot)
+### How to find this bot
 You can find this bot in Telegram by it's name - `@TheBestToDoBot`
  
 ### Buttons and functionality
@@ -55,8 +55,8 @@ Unit tests were conducted using [Mockito](#site.mockito.org/) and [JUnit](#junit
 
 <img src="/src/main/resources/static/test_coverage.jpg" width=auto height=auto />
 
-## Deploying
-This bot was deployed to [Heroku](#heroku.com) and uses the free version of PostgreSQL database to store data about todos, which is provided by Heroku by default. 
+## Deployment
+This bot was deployed to [Heroku](#www.heroku.com) and uses the free version of PostgreSQL database to store data about todos, which is provided by Heroku by default. 
 ## Maintainers
 Students of 3530904/70103 group:
 -   Sergey Khvatov
