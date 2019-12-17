@@ -46,9 +46,9 @@ You can find this bot in Telegram by bot name `@TheBestToDoBot`
 -   `Find not completed tasks` - click this button to get a list of not completed tasks.
     
 ## Testing
-Unit tests were conducted using [Mockito](#https://site.mockito.org/) and [JUnit](#https://junit.org/junit5/).
+Unit tests were conducted using [Mockito](#site.mockito.org/) and [JUnit](#junit.org/junit5/).
 ### Test coverage
-Сode coverage by tests was evaluated with [JaCoCo](#https://www.jacoco.org/jacoco/).
+Сode coverage by tests was evaluated with [JaCoCo](#www.jacoco.org/jacoco/).
 
 <img src="/src/main/resources/static/test_coverage.jpg" width=auto height=auto/>
 
