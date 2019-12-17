@@ -17,7 +17,7 @@ Course project on the subject of Software Design of Peter the Great St. Petersbu
 -   [Maintainers](#Maintainers)
 -   [License](#License)
 
-## Actuality
+## Relevance
 The modern rhythm of life requires a large number of tasks. In order not to miss anything, you need to store your tasks in some form. And there is nothing more convenient than to manage your tasks for the day with the help of a Telegram bot.
 
 ## Features list
