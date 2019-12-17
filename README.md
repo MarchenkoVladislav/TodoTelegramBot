@@ -6,21 +6,21 @@ Course project on the subject of Software Design of Peter the Great St. Petersbu
 
 ## Table of Contents
 -   [Actuality](#Actuality)
--   [Features list](#Features list)
--   [Communication with the Telegram server](#Communication with the Telegram server)
+-   [Features list](#features-list)
+-   [Communication with the Telegram server](#communication-with-the-telegram-server)
 -   [Usage](#Usage)
-    -   [Bot name(how to find this bot)](#Bot name(how to find this bot))
-    -   [Buttons and functionality](#Buttons and functionality)
+    -   [Bot name(how to find this bot)](#bot-namehow-to-find-this-bot)
+    -   [Buttons and functionality](#buttons-and-functionality)
 -   [Testing](#Testing)
-    -   [Test coverage](#Test coverage)
+    -   [Test coverage](#test-coverage)
 -   [Deploying](#Deploying)
 -   [Maintainers](#Maintainers)
 -   [License](#License)
 
-##Actuality
+## Actuality
 The modern rhythm of life requires a large number of tasks. In order not to miss anything, you need to store your tasks in some form. And there is nothing more convenient than to manage your tasks for the day with the help of a Telegram bot.
 
-##Features list
+## Features list
 This bot can:
 -   Create tasks
 -   Change statuses of tasks
@@ -29,11 +29,11 @@ This bot can:
 -   Find tasks by date
 -   Notify about tasks for the day in the morning
 
-##Communication with the Telegram server
+## Communication with the Telegram server
 Communication between the backend and the Telegram is carried out by sending requests to the Telegram API by a unique token.
 
 
-##Usage
+## Usage
 ### Bot name(how to find this bot)
 You can find this bot in Telegram by bot name `@TheBestToDoBot`
  
@@ -50,9 +50,9 @@ Unit tests were conducted using [Mockito](#https://site.mockito.org/) and [JUnit
 ### Test coverage
 Сode coverage by tests was evaluated with [JaCoCo](#https://www.jacoco.org/jacoco/).
 
-<img src="/static/test_coverage.jpg" width="100" height="100"/>
+<img src="/src/main/resources/static/test_coverage.jpg" width="100" height="100"/>
 
-##Deploying
+## Deploying
 This bot was deployed on [Heroku](#heroku.com)
 ## Maintainers
 Students of 3530904/70103 group:
