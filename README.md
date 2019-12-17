@@ -5,15 +5,15 @@
 Course project on the subject of Software Design of Peter the Great St. Petersburg Polytechnic University students
 
 ## Table of Contents
--   [Actuality](#Actuality)
+-   [Relevance](#Actuality)
 -   [Features list](#features-list)
 -   [Communication with the Telegram server](#communication-with-the-telegram-server)
 -   [Usage](#Usage)
-    -   [Bot name(how to find this bot)](#bot-namehow-to-find-this-bot)
+    -   [How to find this bot](#bot-namehow-to-find-this-bot)
     -   [Buttons and functionality](#buttons-and-functionality)
 -   [Testing](#Testing)
     -   [Test coverage](#test-coverage)
--   [Deploying](#Deploying)
+-   [Deployment](#Deploying)
 -   [Maintainers](#Maintainers)
 -   [License](#License)
 
@@ -23,7 +23,7 @@ The modern rhythm of life requires a large number of tasks. In order not to miss
 ## Features list
 This bot can:
 -   Create tasks
--   Change statuses of tasks
+-   Change status of the tasks
 -   Find not completed tasks
 -   Find all tasks
 -   Find tasks by date
@@ -31,29 +31,32 @@ This bot can:
 
 ## Communication with the Telegram server
 Communication between the backend and the Telegram is carried out by sending requests to the Telegram API by a unique token.
+To be able to do this, we use [TelegramBots](#https://github.com/rubenlagus/TelegramBots) library.
 
 
 ## Usage
 ### Bot name(how to find this bot)
-You can find this bot in Telegram by bot name `@TheBestToDoBot`
+You can find this bot in Telegram by it's name - `@TheBestToDoBot`
  
 ### Buttons and functionality
 -   `Show help` - click this button to get help information.
--   `Show all tasks` - click this button to get all own tasks.
--   `Create new task` - click this button to start creation of new task. After that you should send information, which the Bot need: due date, task info and task priority.
--   `Mark task as completed` - click this button to mark any task completed. Also you should to send an id of necessary task.
--   `Find tasks by due date` - click this button to get tasks by due date. Also you should to send a necessary date.
--   `Find not completed tasks` - click this button to get a list of not completed tasks.
+-   `Show all tasks` - click this button to get all your tasks.
+-   `Create new task` - click this button to create a new task. You should send information, which Bot needs: due date, task description and priority.
+-   `Mark task as completed` - click this button to mark any task as completed.
+-   `Find tasks by due date` - click this button to get all the tasks by some specific due date.
+-   `Find not completed tasks` - click this button to get the list of all not completed tasks.
+
+Also, our bot is able to send you notification messages every morning at 8 am.
     
 ## Testing
 Unit tests were conducted using [Mockito](#site.mockito.org/) and [JUnit](#junit.org/junit5/).
 ### Test coverage
-Сode coverage by tests was evaluated with [JaCoCo](#www.jacoco.org/jacoco/).
+Сode coverage with tests was evaluated using [JaCoCo](#www.jacoco.org/jacoco/).
 
-<img src="/src/main/resources/static/test_coverage.jpg" width=auto height=auto/>
+<img src="/src/main/resources/static/test_coverage.jpg" width=auto height=auto />
 
 ## Deploying
-This bot was deployed on [Heroku](#heroku.com)
+This bot was deployed to [Heroku](#heroku.com) and uses the free version of PostgreSQL database to store data about todos, which is provided by Heroku by default. 
 ## Maintainers
 Students of 3530904/70103 group:
 -   Sergey Khvatov
