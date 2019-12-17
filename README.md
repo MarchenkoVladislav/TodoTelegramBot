@@ -50,7 +50,7 @@ Unit tests were conducted using [Mockito](#https://site.mockito.org/) and [JUnit
 ### Test coverage
 Сode coverage by tests was evaluated with [JaCoCo](#https://www.jacoco.org/jacoco/).
 
-<img src="/src/main/resources/static/test_coverage.jpg" width="100" height="100"/>
+<img src="/src/main/resources/static/test_coverage.jpg" width=auto height=auto/>
 
 ## Deploying
 This bot was deployed on [Heroku](#heroku.com)
