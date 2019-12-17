@@ -30,6 +30,4 @@ build/
 ### VS Code ###
 .vscode/
 
-/logs
-
-/src/main
+/logs/
