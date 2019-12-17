@@ -31,7 +31,7 @@ This bot can:
 
 ## Communication with the Telegram server
 Communication between the backend and the Telegram is carried out by sending requests to the Telegram API by a unique token.
-To be able to do this, we use [TelegramBots](#www.github.com/rubenlagus/TelegramBots) library.
+To be able to do this, we use [TelegramBots](https://github.com/rubenlagus/TelegramBots) library.
 
 
 ## Usage
@@ -49,14 +49,14 @@ You can find this bot in Telegram by it's name - `@TheBestToDoBot`
 Also, our bot is able to send you notification messages every morning at 8 am.
     
 ## Testing
-Unit tests were conducted using [Mockito](#site.mockito.org/) and [JUnit](#junit.org/junit5/).
+Unit tests were conducted using [Mockito](https://site.mockito.org/) and [JUnit](https://junit.org/junit5/).
 ### Test coverage
-Сode coverage with tests was evaluated using [JaCoCo](#www.jacoco.org/jacoco/).
+Сode coverage with tests was evaluated using [JaCoCo](https://www.jacoco.org/jacoco/).
 
 <img src="/src/main/resources/static/test_coverage.jpg" width=auto height=auto />
 
 ## Deployment
-This bot was deployed to [Heroku](#www.heroku.com) and uses the free version of PostgreSQL database to store data about todos, which is provided by Heroku by default. 
+This bot was deployed to [Heroku](https://www.heroku.com) and uses the free version of PostgreSQL database to store data about todos, which is provided by Heroku by default. 
 ## Maintainers
 Students of 3530904/70103 group:
 -   Sergey Khvatov
